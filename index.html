@@ -123,6 +123,37 @@
       .store, .wellness { padding: 55px 20px; }
       .footer-grid { gap: 25px; grid-template-columns: 1fr 1fr; }
     }
+    @media (max-width: 420px) {
+      .announcement { font-size: 10px; letter-spacing: .02em; padding: 8px 10px; }
+      .header { gap: 10px; min-height: 76px; padding: 12px 14px; }
+      .brand { font-size: 16px; gap: 6px; }
+      .brand img { height: 36px; width: 36px; }
+      .brand small { font-size: 8px; letter-spacing: .12em; margin-top: 5px; }
+      .header-tools { font-size: 8px; gap: 7px; }
+      .header-tools span:first-child { display: none; }
+      .hero { min-height: 470px; }
+      h1 { font-size: 39px; }
+      .hero p, .store p, .wellness p, .story-grid p { font-size: 15px; }
+      .button { font-size: 11px; padding: 13px 16px; }
+      .section { padding: 48px 16px; }
+      .intro h2, .section-heading h2 { font-size: 30px; }
+      .collections, .products, .concerns { grid-template-columns: 1fr; }
+      .collection img { aspect-ratio: 1.25 / 1; }
+      .products { gap: 28px; }
+      .store, .wellness { padding: 44px 16px; }
+      .wellness-images { gap: 10px; }
+      .review blockquote { font-size: 18px; }
+      .faq { padding: 55px 16px; }
+      .faq h2 { font-size: 30px; }
+      .form { flex-direction: column; gap: 10px; }
+      .form input, .form button { min-height: 48px; width: 100%; }
+      footer { padding: 45px 20px 20px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (min-width: 1400px) {
+      .section { padding-left: 0; padding-right: 0; }
+      .header { padding-left: max(5vw, calc((100vw - 1320px) / 2)); padding-right: max(5vw, calc((100vw - 1320px) / 2)); }
+    }
   </style>
 </head>
 <body>
