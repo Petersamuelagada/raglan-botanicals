@@ -74,11 +74,20 @@
     .concern { border: 1px solid var(--line); background: var(--paper); padding: 25px 20px; }
     .concern h3 { font-family: Georgia, serif; font-size: 21px; font-weight: 400; }
     .concern p { color: var(--muted); font-size: 13px; margin: 10px 0 18px; }
-    .reviews { background: var(--pale); display: grid; gap: 24px; grid-template-columns: repeat(3, 1fr); padding: 70px 8vw; text-align: center; }
-    .review { padding: 0 18px; }
-    .review .stars { color: var(--green); letter-spacing: .18em; }
-    .review blockquote { font-family: Georgia, serif; font-size: 20px; line-height: 1.35; margin: 16px 0; }
-    .review cite { color: var(--muted); font-size: 12px; font-style: normal; letter-spacing: .1em; }
+    .reviews { background: var(--cream); padding: 92px 5vw 96px; text-align: center; }
+    .reviews-intro { margin: 0 auto 42px; max-width: 620px; }
+    .reviews-intro h2 { font-family: Georgia, serif; font-size: clamp(30px, 4vw, 44px); font-weight: 400; line-height: 1.08; margin: 14px 0; }
+    .reviews-intro p { color: var(--muted); font-size: 15px; margin: 0; }
+    .review-grid { display: grid; gap: 22px; grid-template-columns: repeat(3, 1fr); margin: 0 auto; max-width: 1240px; }
+    .review { background: var(--paper); border: 1px solid var(--line); padding: 32px 28px 28px; position: relative; text-align: left; }
+    .review::before { color: var(--sage); content: '“'; font-family: Georgia, serif; font-size: 74px; left: 24px; line-height: .8; position: absolute; top: 24px; }
+    .review .stars { color: var(--green); font-size: 14px; letter-spacing: .16em; margin: 30px 0 22px; }
+    .review blockquote { font-family: Georgia, serif; font-size: 20px; line-height: 1.38; margin: 0 0 26px; }
+    .review-footer { align-items: center; border-top: 1px solid var(--line); display: flex; gap: 11px; padding-top: 18px; }
+    .review-avatar { align-items: center; background: var(--green); border-radius: 50%; color: white; display: flex; font-size: 12px; font-weight: 700; height: 34px; justify-content: center; width: 34px; }
+    .review cite { color: var(--ink); font-size: 11px; font-style: normal; font-weight: 700; letter-spacing: .08em; }
+    .review small { color: var(--muted); display: block; font-size: 11px; font-weight: 400; letter-spacing: 0; margin-top: 3px; }
+    .review-note { color: var(--muted); font-size: 11px; margin: 28px auto 0; max-width: 600px; }
     .faq { margin: 0 auto; max-width: 900px; padding: 80px 5vw; }
     .faq h2 { font-family: Georgia, serif; font-size: 38px; font-weight: 400; margin-bottom: 30px; text-align: center; }
     .faq details { border-top: 1px solid var(--line); padding: 20px 0; }
@@ -107,7 +116,7 @@
       .value { border-bottom: 1px solid var(--line); border-right: 0; padding: 20px 10px; }
       .value:last-child { border-bottom: 0; }
       .collections, .products, .concerns { grid-template-columns: repeat(2, 1fr); }
-      .reviews { grid-template-columns: 1fr; }
+      .review-grid { grid-template-columns: 1fr; max-width: 560px; }
       .store { gap: 35px; }
       .footer-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -228,9 +237,13 @@
     </section>
 
     <section class="reviews">
-      <article class="review"><div class="stars">★★★★★</div><blockquote>“Beautiful products with such a thoughtful, natural feel.”</blockquote><cite>CLIENT REVIEW — TO BE CONFIRMED</cite></article>
-      <article class="review"><div class="stars">★★★★★</div><blockquote>“A lovely local store and wonderful personalised service.”</blockquote><cite>CLIENT REVIEW — TO BE CONFIRMED</cite></article>
-      <article class="review"><div class="stars">★★★★★</div><blockquote>“The perfect place to find a meaningful wellness gift.”</blockquote><cite>CLIENT REVIEW — TO BE CONFIRMED</cite></article>
+      <div class="reviews-intro"><div class="eyebrow">KIND WORDS</div><h2>Loved by our community</h2><p>Thoughtful products, personal service and a little more care in every ritual.</p></div>
+      <div class="review-grid">
+        <article class="review"><div class="stars">★★★★★</div><blockquote>“Beautiful products with such a thoughtful, natural feel.”</blockquote><div class="review-footer"><div class="review-avatar">S</div><cite>Sarah M.<small>Sample name · replace with approved review</small></cite></div></article>
+        <article class="review"><div class="stars">★★★★★</div><blockquote>“A lovely local store and wonderful personalised service.”</blockquote><div class="review-footer"><div class="review-avatar">M</div><cite>Mia R.<small>Sample name · replace with approved review</small></cite></div></article>
+        <article class="review"><div class="stars">★★★★★</div><blockquote>“The perfect place to find a meaningful wellness gift.”</blockquote><div class="review-footer"><div class="review-avatar">J</div><cite>Jessica T.<small>Sample name · replace with approved review</small></cite></div></article>
+      </div>
+      <p class="review-note">Example testimonial layout for discussion. Replace with approved customer reviews before launch.</p>
     </section>
 
     <section class="faq" id="faq"><h2>Frequently asked questions</h2><details><summary>Do you ship across New Zealand and to Australia?</summary><p>Shipping destinations and rates would be confirmed during setup. This section can answer common delivery questions clearly.</p></details><details><summary>Can I collect my order from the Raglan store?</summary><p>In-store pickup can be configured in Shopify if it matches the store's preferred fulfilment process.</p></details><details><summary>How do I choose the right product?</summary><p>Product usage guidance, ingredients and personalised recommendations can help customers shop with confidence.</p></details><details><summary>Are these the final prices and policies?</summary><p>No. Prices, shipping, product claims and store policies are example content for this concept and must be confirmed before launch.</p></details></section>
