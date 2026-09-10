@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Raglan Botanicals — Shopify Craft Theme Concept</title>
+  <style>
+    :root {
+      --ink: #27332b;
+      --green: #40563f;
+      --sage: #82927a;
+      --cream: #f8f5ee;
+      --pale: #ebe8df;
+      --paper: #fffdf9;
+      --line: #ddd8cc;
+      --muted: #687069;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; line-height: 1.5; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    .announcement { background: var(--pale); border-bottom: 1px solid var(--line); color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: .05em; padding: 9px 20px; text-align: center; }
+    .header { align-items: center; background: var(--paper); border-bottom: 1px solid var(--line); display: flex; gap: 28px; justify-content: space-between; min-height: 94px; padding: 18px 5vw; }
+    .brand { color: var(--green); font-family: Georgia, serif; font-size: 24px; line-height: .9; }
+    .brand small { color: var(--ink); display: block; font-family: Arial, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: .18em; margin-top: 8px; }
+    .nav { display: flex; gap: 30px; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+    .header-tools { color: var(--muted); display: flex; font-size: 11px; gap: 18px; letter-spacing: .05em; white-space: nowrap; }
+    .hero { align-items: center; background: linear-gradient(rgba(25,48,35,.68), rgba(25,48,35,.68)), url('https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/1617963903288-9Z9KLK1LMG17DC6WFVT4/3F19922A-FA94-480B-B07C-105FBC8155E8.jpeg') center/cover; color: white; display: flex; min-height: 620px; padding: 70px 8vw; text-align: center; }
+    .hero-content { margin: auto; max-width: 680px; }
+    .eyebrow { color: var(--green); font-size: 13px; font-weight: 700; letter-spacing: .15em; }
+    .hero .eyebrow { color: #d8e0d2; }
+    h1, h2, h3 { margin: 0; }
+    h1 { font-family: Georgia, serif; font-size: clamp(42px, 6vw, 72px); font-weight: 400; line-height: 1.02; }
+    .hero p { font-size: 17px; margin: 22px auto 30px; max-width: 520px; }
+    .button { background: var(--green); border: 1px solid var(--green); color: white; display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: .08em; padding: 15px 24px; }
+    .button.light { background: white; border-color: white; color: var(--ink); }
+    .section { margin: 0 auto; max-width: 1320px; padding: 88px 5vw; }
+    .intro { text-align: center; }
+    .intro h2, .section-heading h2 { font-family: Georgia, serif; font-size: clamp(28px, 4vw, 43px); font-weight: 400; line-height: 1.1; }
+    .intro p { color: var(--muted); font-size: 17px; margin: 20px auto 0; max-width: 720px; }
+    .values { background: var(--pale); display: grid; grid-template-columns: repeat(3, 1fr); padding: 48px 8vw; text-align: center; }
+    .value { border-right: 1px solid var(--line); padding: 0 30px; }
+    .value:last-child { border-right: 0; }
+    .value strong { color: var(--green); display: block; font-size: 13px; letter-spacing: .13em; }
+    .value span { display: block; font-family: Georgia, serif; font-size: 17px; margin-top: 14px; }
+    .section-heading { align-items: end; display: flex; justify-content: space-between; margin-bottom: 34px; }
+    .section-heading .eyebrow { margin-bottom: 12px; }
+    .link { color: var(--green); font-size: 13px; font-weight: 700; }
+    .collections { display: grid; gap: 22px; grid-template-columns: repeat(3, 1fr); }
+    .collection img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+    .collection h3 { font-size: 16px; letter-spacing: .05em; margin-top: 15px; }
+    .collection p { color: var(--green); font-size: 13px; margin: 7px 0 0; }
+    .store { align-items: center; background: var(--cream); display: grid; gap: 70px; grid-template-columns: 1.15fr 1fr; padding: 76px 8vw; }
+    .store img { aspect-ratio: 1.45 / 1; object-fit: cover; width: 100%; }
+    .store h2 { font-family: Georgia, serif; font-size: clamp(31px, 4vw, 48px); font-weight: 400; line-height: 1.05; margin: 18px 0 24px; }
+    .store p { color: var(--muted); font-size: 17px; max-width: 450px; }
+    .products { display: grid; gap: 22px; grid-template-columns: repeat(4, 1fr); }
+    .product img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+    .product h3 { font-size: 15px; margin-top: 14px; }
+    .price { color: var(--muted); font-size: 14px; margin-top: 4px; }
+    .product .link { display: block; font-size: 12px; margin-top: 9px; }
+    .wellness { align-items: center; background: var(--pale); display: grid; gap: 45px; grid-template-columns: 1fr 1fr; padding: 78px 8vw; }
+    .wellness h2 { font-family: Georgia, serif; font-size: clamp(30px, 4vw, 46px); font-weight: 400; line-height: 1.08; margin: 17px 0 22px; }
+    .wellness p { color: var(--muted); font-size: 17px; max-width: 420px; }
+    .wellness-images { display: grid; gap: 18px; grid-template-columns: repeat(2, 1fr); }
+    .wellness-images img { aspect-ratio: 1 / 1; object-fit: cover; width: 100%; }
+    .newsletter { padding: 80px 20px; text-align: center; }
+    .newsletter h2 { font-family: Georgia, serif; font-size: 38px; font-weight: 400; }
+    .newsletter p { color: var(--muted); }
+    .form { display: flex; margin: 25px auto 0; max-width: 430px; }
+    .form input { border: 1px solid var(--ink); flex: 1; font-size: 14px; min-width: 0; padding: 14px; }
+    .form button { background: var(--green); border: 1px solid var(--green); color: white; cursor: pointer; font-size: 12px; font-weight: 700; padding: 0 20px; }
+    footer { background: var(--ink); color: white; padding: 58px 5vw 24px; }
+    .footer-grid { display: grid; gap: 40px; grid-template-columns: 1.4fr 1fr 1fr 1fr; margin: auto; max-width: 1320px; }
+    footer .brand { color: #cbd8c5; }
+    footer .brand small { color: white; }
+    footer p, footer li { color: #d4ddd1; font-size: 13px; }
+    footer ul { list-style: none; margin: 0; padding: 0; }
+    footer li { margin-bottom: 8px; }
+    .footer-title { color: #b9c8b4; font-size: 12px; font-weight: 700; letter-spacing: .1em; margin-bottom: 16px; }
+    .copyright { border-top: 1px solid #536255; color: #b9c8b4; font-size: 12px; margin: 42px auto 0; max-width: 1320px; padding-top: 18px; }
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      .header-tools { font-size: 10px; gap: 10px; }
+      .values, .store, .wellness { grid-template-columns: 1fr; }
+      .value { border-bottom: 1px solid var(--line); border-right: 0; padding: 20px 10px; }
+      .value:last-child { border-bottom: 0; }
+      .collections, .products { grid-template-columns: repeat(2, 1fr); }
+      .store { gap: 35px; }
+      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .header { padding: 15px 20px; }
+      .brand { font-size: 20px; }
+      .header-tools span:nth-child(2) { display: none; }
+      .hero { min-height: 510px; padding: 40px 20px; }
+      .section { padding: 60px 20px; }
+      .collections, .products { gap: 14px; }
+      .section-heading { display: block; }
+      .section-heading .link { display: block; margin-top: 12px; }
+      .store, .wellness { padding: 55px 20px; }
+      .footer-grid { gap: 25px; grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">FREE NZ SHIPPING OVER $75 &nbsp;•&nbsp; SHIPPING TO AUSTRALIA</div>
+  <header class="header">
+    <a class="brand" href="#top">RAGLAN<small>BOTANICALS</small></a>
+    <nav class="nav"><a href="#collections">Shop</a><a href="#story">Our Story</a><a href="#store">Concept Store</a><a href="#journal">Journal</a></nav>
+    <div class="header-tools"><span>SEARCH</span><span>ACCOUNT</span><span>CART (0)</span></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">NATURAL BEAUTY</div>
+        <h1>Inspired by Raglan</h1>
+        <p>Botanical skincare, wellness and thoughtful gifts.</p>
+        <a class="button light" href="#products">SHOP THE COLLECTION</a>
+      </div>
+    </section>
+
+    <section class="section intro" id="story">
+      <div class="eyebrow">OUR PHILOSOPHY</div>
+      <h2>Nature-led care for everyday rituals</h2>
+      <p>High quality, natural products inspired by the beauty and spirit of Raglan. Made with intention, for holistic wellbeing.</p>
+    </section>
+
+    <section class="values">
+      <div class="value"><strong>NATURAL</strong><span>Thoughtfully selected ingredients</span></div>
+      <div class="value"><strong>LOCAL</strong><span>Made with care in Raglan</span></div>
+      <div class="value"><strong>CONSCIOUS</strong><span>Packaging with less waste</span></div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="section-heading"><div><div class="eyebrow">EXPLORE THE COLLECTIONS</div><h2>Find your natural ritual</h2></div></div>
+      <div class="collections">
+        <a class="collection" href="#products"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/c805116d-693b-44a5-8e15-93528c865613/9DB4E539-40B0-47CF-8DBD-4FDD7175F60A.jpeg" alt="Skincare products"><h3>SKINCARE</h3><p>Explore collection →</p></a>
+        <a class="collection" href="#wellness"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/45c69963-6481-4a86-9b8c-af40807dd704/DSC_7464_sml.jpeg" alt="Therapeutic products"><h3>THERAPEUTIC</h3><p>Explore collection →</p></a>
+        <a class="collection" href="#products"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/bfb59a70-a036-4f79-8f40-fd8bf83d2a77/5EF7B0DB-2030-4FC5-9636-F47E799C7943.jpeg" alt="Botanical accessories"><h3>ACCESSORIES</h3><p>Explore collection →</p></a>
+      </div>
+    </section>
+
+    <section class="store" id="store">
+      <img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/1617965634640-8MUO89R3TZRK3QDJDACT/17AC2733-1578-4536-87B3-5B294EC7C148.jpeg" alt="Raglan Botanicals concept store">
+      <div><div class="eyebrow">VISIT RAGLAN</div><h2>Come and experience our concept store</h2><p>Discover our products in person, receive personalised recommendations and find a thoughtful gift for someone special.</p><a class="button" href="#footer">GET DIRECTIONS</a></div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-heading"><div><div class="eyebrow">FEATURED PRODUCTS</div><h2>Small-batch favourites</h2></div><a class="link" href="#collections">VIEW ALL →</a></div>
+      <div class="products">
+        <article class="product"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/bfb59a70-a036-4f79-8f40-fd8bf83d2a77/5EF7B0DB-2030-4FC5-9636-F47E799C7943.jpeg" alt="Eco lip balm"><h3>Eco Lip Balm</h3><div class="price">$12.00 NZD</div><a class="link" href="#">View product →</a></article>
+        <article class="product"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/c805116d-693b-44a5-8e15-93528c865613/9DB4E539-40B0-47CF-8DBD-4FDD7175F60A.jpeg" alt="Luxury facial serum"><h3>Luxury Facial Serum</h3><div class="price">$42.00 NZD</div><a class="link" href="#">View product →</a></article>
+        <article class="product"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/1610330792923-1FBQYQQ2Q1DFZJC1ZCMG/DBVCE8010.JPG" alt="Cleansing oil"><h3>Cleansing Oil</h3><div class="price">$29.00 NZD</div><a class="link" href="#">View product →</a></article>
+        <article class="product"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/bfb59a70-a036-4f79-8f40-fd8bf83d2a77/5EF7B0DB-2030-4FC5-9636-F47E799C7943.jpeg" alt="Eco lip balm gift"><h3>Eco Lip Balm Gift</h3><div class="price">$12.00 NZD</div><a class="link" href="#">View product →</a></article>
+      </div>
+    </section>
+
+    <section class="wellness" id="wellness">
+      <div><div class="eyebrow">WELLNESS SUPPORT</div><h2>Rituals for rest, stress and self-care</h2><p>Explore botanical blends created to support your everyday wellbeing.</p><a class="button" href="#products">SHOP WELLNESS</a></div>
+      <div class="wellness-images"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/c805116d-693b-44a5-8e15-93528c865613/9DB4E539-40B0-47CF-8DBD-4FDD7175F60A.jpeg" alt="Botanical wellness oil"><img src="https://images.squarespace-cdn.com/content/v1/5fb19d05f89b0151b04c7271/1610330792923-1FBQYQQ2Q1DFZJC1ZCMG/DBVCE8010.JPG" alt="Cleansing oil"></div>
+    </section>
+
+    <section class="newsletter" id="journal"><div class="eyebrow">STAY IN TOUCH</div><h2>Natural notes from Raglan</h2><p>New products, wellness inspiration and store updates.</p><form class="form"><input type="email" placeholder="Your email address" aria-label="Your email address"><button type="button">SIGN UP</button></form></section>
+  </main>
+
+  <footer id="footer"><div class="footer-grid"><div><a class="brand" href="#top">RAGLAN<small>BOTANICALS</small></a><p>Natural skincare, wellness and thoughtful gifts inspired by Raglan.</p></div><div><div class="footer-title">SHOP</div><ul><li><a href="#collections">Skincare</a></li><li><a href="#collections">Therapeutic</a></li><li><a href="#products">Gift packs</a></li><li><a href="#products">Bestsellers</a></li></ul></div><div><div class="footer-title">INFO</div><ul><li><a href="#story">Our story</a></li><li><a href="#store">Concept store</a></li><li><a href="#">Contact</a></li><li><a href="#">Shipping & returns</a></li></ul></div><div><div class="footer-title">VISIT US</div><ul><li>19C Bow Street, Raglan</li><li>New Zealand</li><li>Store details to be confirmed</li></ul></div></div><div class="copyright">SHOPIFY CRAFT THEME HOMEPAGE CONCEPT · FOR DISCUSSION ONLY</div></footer>
+</body>
+</html>
